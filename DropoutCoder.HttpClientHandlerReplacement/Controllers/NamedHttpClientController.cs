@@ -1,15 +1,15 @@
 namespace DropoutCoder.HttpClientHandlerReplacement.Controllers
 {
+    using DropoutCoder.HttpClientHandlerReplacement;
     using Microsoft.AspNetCore.Mvc;
-    using System.Net.Http;
 
     [ApiController]
     [Route("[controller]")]
-    public class DefaultHttpController : ControllerBase
+    public class NamedHttpClientController : ControllerBase
     {
         private readonly IHttpClientFactory _factory;
 
-        public DefaultHttpController(IHttpClientFactory factory)
+        public NamedHttpClientController(IHttpClientFactory factory)
         {
             _factory = factory;
         }
@@ -18,7 +18,7 @@ namespace DropoutCoder.HttpClientHandlerReplacement.Controllers
         public async Task<IActionResult> GetAsync()
         {
             var response = await _factory
-                .CreateClient()
+                .CreateClient(HttpClientNames.Google)
                 .GetAsync(string.Empty);
 
             return StatusCode((int)response.StatusCode);

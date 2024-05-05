@@ -1,5 +1,7 @@
 namespace DropoutCoder.HttpClientHandlerReplacement
 {
+    using DropoutCoder.HttpClientHandlerReplacement.SendGrid;
+
     public class Program
     {
         public static void Main(string[] args)
@@ -17,12 +19,17 @@ namespace DropoutCoder.HttpClientHandlerReplacement
             builder.Services
                 .AddHttpClient()
                 .ConfigureHttpClientDefaults(builder =>
-                    builder.ConfigureHttpClient(hc => hc.BaseAddress = new Uri("https://www.example.com"))
+                    builder.ConfigureHttpClient(hc => hc.BaseAddress = new Uri("https://www.google.com"))
                 );
 
             // Named HTTP client registration
             builder.Services
                 .AddHttpClient<HttpClient>(HttpClientNames.Google)
+                .ConfigureHttpClient(hc => hc.BaseAddress = new Uri("https://www.google.com"));
+
+            // Typed  HTTP client registration
+            builder.Services
+                .AddHttpClient<ISendGridClient, SendGridClient>()
                 .ConfigureHttpClient(hc => hc.BaseAddress = new Uri("https://www.google.com"));
 
             var app = builder.Build();
