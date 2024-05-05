@@ -8,11 +8,11 @@ namespace DropoutCoder.HttpClientHandlerReplacement.Tests
     [TestClass]
     public class ApiTests
     {
-        private readonly WebApplicationFactory<HttpClientHandlerReplacement.Program> _factory;
+        private readonly WebApplicationFactory<Program> _factory;
 
         public ApiTests()
         {
-            _factory = new WebApplicationFactory<HttpClientHandlerReplacement.Program>();
+            _factory = new WebApplicationFactory<Program>();
         }
 
         [TestMethod]
