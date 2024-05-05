@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DropoutCoder.HttpClientHandlerReplacement", "DropoutCoder.HttpClientHandlerReplacement.csproj", "{14410522-D0D0-4C03-A957-410927CBD119}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DropoutCoder.HttpClientHandlerReplacement.Tests", "..\DropoutCoder.HttpClientHandlerReplacement.Tests\DropoutCoder.HttpClientHandlerReplacement.Tests.csproj", "{AB94C316-FB5D-4C70-B682-3CD8BA7A07CD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{14410522-D0D0-4C03-A957-410927CBD119}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14410522-D0D0-4C03-A957-410927CBD119}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14410522-D0D0-4C03-A957-410927CBD119}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14410522-D0D0-4C03-A957-410927CBD119}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB94C316-FB5D-4C70-B682-3CD8BA7A07CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB94C316-FB5D-4C70-B682-3CD8BA7A07CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB94C316-FB5D-4C70-B682-3CD8BA7A07CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB94C316-FB5D-4C70-B682-3CD8BA7A07CD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {49C8AE4C-708B-436C-A84B-A8E1B7876D4C}
+	EndGlobalSection
+EndGlobal
