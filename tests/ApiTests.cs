@@ -1,30 +1,27 @@
 namespace HttpClientHandlerReplacement.Tests;
 
 using HttpClientHandlerReplacement.SendGrid;
+using HttpClientHandlerReplacement.Tests.Internal;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.DependencyInjection;
 using System.Net;
 
 [TestClass]
-public class ApiTests
-{
+public class ApiTests {
     private readonly WebApplicationFactory<Program> _defaultFactory;
     private readonly ApiApplicationFactory _customFactory;
 
-    public ApiTests()
-    {
+    public ApiTests() {
         _defaultFactory = new WebApplicationFactory<Program>();
         _customFactory = new ApiApplicationFactory();
     }
 
     [TestMethod]
-    public async Task DefaultHttpClientTestWithDefaultFactory()
-    {
+    public async Task DefaultHttpClientTestWithDefaultFactory() {
         var client = _defaultFactory.WithWebHostBuilder(builder =>
             builder.ConfigureTestServices(
-                services =>
-                {
+                services => {
                     services
                         .ConfigureHttpClientDefaults(builder =>
                             builder.ConfigurePrimaryHttpMessageHandler(() => new StatusCodeResponseHttpMessageHandler(HttpStatusCode.InternalServerError))
@@ -55,12 +52,10 @@ public class ApiTests
     }
 
     [TestMethod]
-    public async Task NamedHttpClientTestWithDefaultFactory()
-    {
+    public async Task NamedHttpClientTestWithDefaultFactory() {
         var client = _defaultFactory.WithWebHostBuilder(builder =>
             builder.ConfigureTestServices(
-                services =>
-                {
+                services => {
                     services
                         .AddHttpClient<HttpClient>(HttpClientNames.Google)
                         .ConfigurePrimaryHttpMessageHandler(() => new StatusCodeResponseHttpMessageHandler(HttpStatusCode.InternalServerError));
@@ -80,12 +75,10 @@ public class ApiTests
     }
 
     [TestMethod]
-    public async Task TypedHttpClientTestWithDefaultFactory()
-    {
+    public async Task TypedHttpClientTestWithDefaultFactory() {
         var client = _defaultFactory.WithWebHostBuilder(builder =>
             builder.ConfigureTestServices(
-                services =>
-                {
+                services => {
                     services
                         .AddHttpClient<ISendGridClient, SendGridClient>()
                         .ConfigurePrimaryHttpMessageHandler(() => new StatusCodeResponseHttpMessageHandler(HttpStatusCode.InternalServerError));
@@ -105,12 +98,10 @@ public class ApiTests
     }
 
     [TestMethod]
-    public async Task DefaultHttpClientTestWithCustomFactory()
-    {
+    public async Task DefaultHttpClientTestWithCustomFactory() {
         var client = _customFactory.WithWebHostBuilder(builder =>
             builder.ConfigureTestServices(
-                services =>
-                {
+                services => {
                     services
                         .AddHttpClient<HttpClient>(HttpClientNames.Google)
                         .ConfigurePrimaryHttpMessageHandler(() => new HttpClientHandler());
@@ -136,12 +127,10 @@ public class ApiTests
     }
 
     [TestMethod]
-    public async Task NamedHttpClientTestWithCustomFactory()
-    {
+    public async Task NamedHttpClientTestWithCustomFactory() {
         var client = _customFactory.WithWebHostBuilder(builder =>
             builder.ConfigureTestServices(
-                services =>
-                {
+                services => {
                     services
                         .ConfigureHttpClientDefaults(builder =>
                             builder.ConfigurePrimaryHttpMessageHandler(() => new HttpClientHandler())
@@ -166,12 +155,10 @@ public class ApiTests
     }
 
     [TestMethod]
-    public async Task TypedHttpClientTestWithCustomFactory()
-    {
+    public async Task TypedHttpClientTestWithCustomFactory() {
         var client = _defaultFactory.WithWebHostBuilder(builder =>
             builder.ConfigureTestServices(
-                services =>
-                {
+                services => {
                     services
                         .AddHttpClient<ISendGridClient, SendGridClient>()
                         .ConfigurePrimaryHttpMessageHandler(() => new StatusCodeResponseHttpMessageHandler(HttpStatusCode.InternalServerError));

@@ -3,17 +3,14 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 
-public class SendGridClient : ISendGridClient
-{
+public class SendGridClient : ISendGridClient {
     private readonly HttpClient _httpClient;
 
-    public SendGridClient(HttpClient httpClient)
-    {
+    public SendGridClient(HttpClient httpClient) {
         _httpClient = httpClient;
     }
 
-    public async Task<HttpResponseMessage> SendAsync()
-    {
+    public async Task<HttpResponseMessage> SendAsync() {
         return await _httpClient
             .GetAsync(string.Empty);
     }
