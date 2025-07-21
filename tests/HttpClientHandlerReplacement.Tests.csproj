@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DropoutCoder.HttpClientHandlerReplacement\DropoutCoder.HttpClientHandlerReplacement.csproj" />
+    <ProjectReference Include="..\src\HttpClientHandlerReplacement.csproj" />
   </ItemGroup>
 
   <ItemGroup>

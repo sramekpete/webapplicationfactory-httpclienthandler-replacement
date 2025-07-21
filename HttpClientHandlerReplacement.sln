@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DropoutCoder.HttpClientHandlerReplacement", "DropoutCoder.HttpClientHandlerReplacement.csproj", "{14410522-D0D0-4C03-A957-410927CBD119}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src/HttpClientHandlerReplacement", "src\HttpClientHandlerReplacement.csproj", "{14410522-D0D0-4C03-A957-410927CBD119}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DropoutCoder.HttpClientHandlerReplacement.Tests", "..\DropoutCoder.HttpClientHandlerReplacement.Tests\DropoutCoder.HttpClientHandlerReplacement.Tests.csproj", "{AB94C316-FB5D-4C70-B682-3CD8BA7A07CD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpClientHandlerReplacement.Tests", "tests\HttpClientHandlerReplacement.Tests.csproj", "{AB94C316-FB5D-4C70-B682-3CD8BA7A07CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
